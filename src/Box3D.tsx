@@ -215,11 +215,14 @@ export function Box3D({ position, navX, navY, navState, expanded, onNav }: Box3D
             userSelect: 'none',
           }}>
             {([
-              { title: 'iPraktikum (with Quartett Mobile)', desc: 'Implementation of a full-stack Swift navigation app using Prompt Engineering on Apple Intelligence On-Device to create personalized stops based on contact data.', align: 'left' },
-              { title: 'CPU Cache Simulation', desc: 'Simulation and analysis of the CPU cache in systemC to understand memory efficiency.', align: 'right' },
-              { title: 'Chrome Password Extension', desc: 'Development and publication of a Chrome extension for analyzing password security, improving memorability and secure persistent storage.', align: 'left' },
-              { title: 'Web-Development Projects', desc: 'Creation and deployment of responsive websites (HTML, CSS, JavaScript, TypeScript), including a fitness platform and an information portal for a school.', align: 'right' },
-              { title: 'Image Detection ML Model', desc: 'Development of an AI model for classifying cats and dogs to learn fundamental concepts of image recognition and machine learning.', align: 'left' },
+              { title: 'FlyBrainLab — 3rd Place, Hack-Nation Munich', desc: 'Multi-agent AI platform, built in a team of four, that explores the fruit fly brain using the FlyWire connectome, runs whole-brain spiking simulations (Brian2) to test circuit hypotheses, and replays results in a Three.js web viewer.', align: 'left' },
+              { title: 'Reframe — TUM.ai Hackathon', desc: 'Agent-driven pipeline that automatically reframes videos into face-aware Instagram Feed and Reel formats.', align: 'right' },
+              { title: 'Herdra — THINK. MAKE. START.', desc: 'End-to-end solar-powered water-monitoring prototype for remote livestock farms, built in a team of five during a two-week makeathon: sensors, LoRa firmware, iOS app and business case.', align: 'left' },
+              { title: 'iPraktikum (with Quartett Mobile)', desc: 'Implementation of a full-stack Swift navigation app using Prompt Engineering on Apple Intelligence On-Device to create personalized stops based on contact data.', align: 'right' },
+              { title: 'CPU Cache Simulation', desc: 'Simulation and analysis of the CPU cache in systemC to understand memory efficiency.', align: 'left' },
+              { title: 'Chrome Password Extension', desc: 'Development and publication of a Chrome extension for analyzing password security, improving memorability and secure persistent storage.', align: 'right' },
+              { title: 'Web-Development Projects', desc: 'Creation and deployment of responsive websites (HTML, CSS, JavaScript, TypeScript), including a fitness platform and an information portal for a school.', align: 'left' },
+              { title: 'Image Detection ML Model', desc: 'Development of an AI model for classifying cats and dogs to learn fundamental concepts of image recognition and machine learning.', align: 'right' },
             ] as { title: string; desc: string; align: 'left' | 'right' }[]).map(({ title, desc, align }) => (
               <div key={title} style={{
                 textAlign: align,
@@ -270,7 +273,7 @@ export function Box3D({ position, navX, navY, navState, expanded, onNav }: Box3D
               {
                 title: 'Autonomous Model Car', align: 'right' as const,
                 bullets: [
-                  'Built an autonomous Jetracer model vehicle on ROS Noetic and Jetson Nano with end-to-end control via Reinforcement Learning (PyTorch, Torchvision)',
+                  'Built an autonomous Jetracer model vehicle on ROS Noetic and Jetson Nano with an end-to-end driving policy trained via behavior cloning (PyTorch, Torchvision)',
                   'Developed a full pipeline including data collection scripts, automated labeling, model training and real-time on-device inference',
                 ],
               },
@@ -328,6 +331,11 @@ export function Box3D({ position, navX, navY, navState, expanded, onNav }: Box3D
                   label: 'Email',
                   href: 'mailto:kartik.krishnan@tum.de',
                   path: 'M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z',
+                },
+                {
+                  label: 'CV',
+                  href: 'https://github.com/KartikKrishnan05/KartikKrishnan05/blob/main/Kartik_Krishnan_CV.pdf',
+                  path: 'M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z',
                 },
               ] as { label: string; href: string; path: string }[]).map(({ label, href, path }) => (
                 <div

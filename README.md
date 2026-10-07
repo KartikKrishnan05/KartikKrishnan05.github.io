@@ -1,54 +1,27 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio: **[kartikkrishnan05.github.io](https://kartikkrishnan05.github.io/)**
 
-Currently, two official plugins are available:
+The site is a 3D room you look around in. Scroll or use the arrow keys to turn toward a wall — about, projects, robotics, and contact. With the camera on, the view also follows your head: a small face-detection model ([face-api.js](https://github.com/justadudewhohacks/face-api.js), tiny face detector) runs entirely in the browser and shifts the perspective as you move, so the room feels like a window. Nothing from the camera leaves your device.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech
 
-## Expanding the ESLint configuration
+React · TypeScript · Vite · CSS 3D transforms · face-api.js · GitHub Actions + GitHub Pages
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Run locally
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Pushing to `main` builds the site and deploys it to GitHub Pages (`.github/workflows/deploy.yml`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Structure
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| File | Purpose |
+| --- | --- |
+| `src/App.tsx` | Navigation between walls (scroll wheel, arrow keys) and camera toggle |
+| `src/Box3D.tsx` | The 3D room and the content on each wall |
+| `src/useHeadTracker.ts` | Webcam head tracking with face-api.js |
+| `public/weights/` | Face-detector model weights |
